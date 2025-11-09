@@ -1,0 +1,279 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #000;
+}
+
+nav a {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #232323;
+}
+
+nav a:active {
+    background-color: #3e3e3e;
+}
+
+/* Main Layout */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Reusable Card Component */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+/* Description Section */
+.description {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Video Styling */
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#meet {
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card .pfp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000;
+    margin-bottom: 1rem;
+}
+
+.profile-card .name {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.profile-card .role {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+.profile-card .description {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+.profile-card .links {
+    display: flex;
+    gap: 1rem;
+}
+
+.profile-card .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.profile-card .links a:hover {
+    background-color: #e0e0e0;
+}
+
+.profile-card .links img {
+    width: 20px;
+    height: 20px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+}
+
+.profile-card .links a:hover img {
+    filter: grayscale(0%);
+}
+
+/* Document Styling */
+.documents-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.documents-accordion .folder {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.documents-accordion .folder-summary {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+.documents-accordion .folder-summary:hover { background: #222; }
+
+.documents-accordion .folder-summary::before {
+    content: "play_arrow";
+    font-family: "Material Icons";
+    font-size: 1.1rem;
+    transition: transform 0.25s ease;
+}
+
+.documents-accordion .folder input[type="checkbox"] { display: none; }
+
+.documents-accordion .folder input:checked ~ .folder-summary::before {
+    transform: rotate(90deg);
+}
+
+.documents-accordion .folder-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #f9f9f9;
+}
+.documents-accordion .folder input:checked ~ .folder-content {
+    max-height: 800px;
+    padding: 1.2rem 1.5rem;
+}
+
+.file-list { list-style: none; padding: 0; margin: 0; }
+.file-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #ddd;
+}
+.file-list li:last-child { border-bottom: none; }
+.file-list a { color: #0066cc; text-decoration: none; font-weight: 500; }
+.file-list a:hover { text-decoration: underline; }
+.file-icon { width: 18px; height: 18px; }
+
+/* Bibliography Styling */
+.bibliography-accordion .bib-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: bib-counter;
+}
+
+.bibliography-accordion .bib-list li {
+    counter-increment: bib-counter;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #ddd;
+    padding-left: 2.5rem;
+    text-indent: -2.5rem;
+    line-height: 1.5;
+}
+
+.bibliography-accordion .bib-list li:last-child {
+    border-bottom: none;
+}
+
+.bibliography-accordion .bib-list li::before {
+    content: "[" counter(bib-counter) "] ";
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.bibliography-accordion .bib-list a {
+    color: #0066cc;
+    word-break: break-all;
+}
+
+.bibliography-accordion .bib-list cite {
+    font-style: italic;
+    color: #222;
+}
