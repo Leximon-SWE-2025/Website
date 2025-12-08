@@ -18,7 +18,94 @@
     </header>
     <main>
         <section class="card">
-            <h1>Download Information Coming Soon!</h1>
+            <h1>Download Release</h1>
+            <p style="margin-top: 0.5rem;">
+                The <a href="https://github.com/Leximon-SWE-2025/Leximon/releases" target="_blank" style="color: #0066cc; font-weight: bold;">releases section</a> of the GitHub repository has precompiled executables of the game for the <b>Windows operating system</b>.
+            </p>
+            <h2 style="margin-top: 1.5rem;">How to Play a Release</h2>
+            <ol style="text-align: left; align-self: flex-start; margin: 1rem 0 1rem 1.5rem; line-height: 1.5;">
+                <li>Download the desired release as a <b>.zip</b> file.</li>
+                <li><b>Unzip</b> the file.</li>
+                <li>Run the provided <b>.exe</b> file.</li>
+                <li><b style="color: #c00;">Note:</b> All files provided in the release must be kept in the same directory as the executable file.</li>
+            </ol>
+        </section>
+
+        <section class="card" style="text-align: left; align-items: flex-start;">
+            <h1>Build the Game</h1>
+            <h2 style="margin-top: 0.5rem;">Required Tools</h2>
+            <ul style="margin: 0.5rem 0 1.5rem 1.5rem; list-style-type: disc;">
+                <li>Godot Engine - .NET 4.5.1</li>
+                <li>Godot Engine - .NET 4.5.1 required dependencies</li>
+            </ul>
+
+            <h2 style="margin-top: 1.5rem;">Instructions (Tested on Windows 11)</h2>
+            <ol style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.5;">
+                <li>Download and install the correct version of <a href="https://godotengine.org/" target="_blank" style="color: #0066cc;">Godot Engine</a>.
+                    <ul style="list-style-type: lower-alpha; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>If required, download and install any other required software as listed on the download page for Godot Engine.</li>
+                    </ul>
+                </li>
+                <li>Clone the repository from the desired commit.</li>
+                <li>Run the Godot executable.</li>
+                <li>Import the project in the Godot editor by selecting <b>Import</b> from the project list and using the folder for the repository.</li>
+                <li>Open the game.</li>
+                <li>Go to <b>Run the Project in the Godot Editor</b> or <b>Export the project</b> as desired (instructions below).</li>
+            </ol>
+
+            <h2 style="margin-top: 1.5rem;">Run the Project in the Godot Editor</h2>
+            <ol style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.5;" start="7">
+                <li>Build the project by clicking the <b>Build Project</b> button (top right of the UI).</li>
+                <li>Wait for the build to complete.</li>
+                <li>Run the project by clicking the <b>Run Project</b> button (located directly right of the Build Project button).</li>
+            </ol>
+
+            <h2 style="margin-top: 1.5rem;">Export the Project</h2>
+            <ol style="margin: 0.5rem 0 1rem 1.5rem; line-height: 1.5;" start="7">
+                <li>Ensure <b>Export templates</b> are installed:
+                    <ul style="list-style-type: lower-alpha; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Select: <b>Editor -> Manage Export Templates</b>.</li>
+                        <li>Ensure best available mirror is selected.</li>
+                        <li>Press <b>Download and Install</b>.</li>
+                        <li>Wait for download to complete.</li>
+                        <li>Close Export Template Manager.</li>
+                    </ul>
+                </li>
+                <li>Select <b>Project -> Export</b>.</li>
+                <li>Add desired export template(s).</li>
+                <li>Click <b>Export All</b>.</li>
+                <li>Click <b>Release</b>.</li>
+                <li>The exported game will be in the folder chosen when setting up the export template(s).</li>
+            </ol>
+            <p style="font-style: italic; margin-top: 0.5rem;">Note: all files produced by export must be kept in the same directory as the executable file.</p>
+        </section>
+
+        <section class="card" style="text-align: left; align-items: flex-start;">
+            <h1>Play The Game - Controls</h1>
+            <h2 style="margin-top: 0.5rem;">Basic Controls</h2>
+            <ul style="margin: 0.5rem 0 1rem 1.5rem; list-style-type: disc;">
+                <li>Use <b>w, a, s, d</b> or the <b>arrow keys</b> to move.</li>
+                <li>Use <b>f</b> to open the inventory to view player info and word info.</li>
+                <li>Use <b>e</b> when close to an enemy to engage in a battle.</li>
+                <li>Use <b>escape</b> to close the inventory, leave a battle, or open the exit menu.</li>
+            </ul>
+
+            <h2 style="margin-top: 1rem;">Inventory and Battle UI</h2>
+            <ul style="margin: 0.5rem 0 1rem 1.5rem; list-style-type: disc;">
+                <li><b>In the inventory</b>: Any word can be clicked on with the mouse to view its types as well as its definitions.</li>
+                <li><b>In the battle menu</b>: A word can be clicked to open a menu to choose how to use it.
+                    <ul style="list-style-type: circle; margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>The options are to attack, defend, or cancel selection.</li>
+                    </ul>
+                </li>
+                <li>The <b>help text</b> can be clicked on to view the word's definition(s).</li>
+            </ul>
+
+            <h2 style="margin-top: 1rem;">Battle Progression Notes</h2>
+            <ul style="margin: 0.5rem 0 0 1.5rem; list-style-type: disc;">
+                <li>When either combatant runs out of health, the battle is over.</li>
+                <li>Every <b>3 battles won</b>, the Player's type is randomized.</li>
+            </ul>
         </section>
     </main>
 </body>
